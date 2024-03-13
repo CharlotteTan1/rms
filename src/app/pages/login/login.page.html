@@ -3,16 +3,23 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Log in</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <br/>
   <br/>
-  <ion-input label="Solid input" label-placement="floating" fill="solid" placeholder="Enter text"></ion-input>
-
-    <br />
-
-<ion-input label="Outline input" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+  <ion-item>
+    <ion-input label="Username" placeholder="Enter text" fill="outline" [(ngModel)]="username"></ion-input>
+  </ion-item>
+ 
+    <br>
+    <br>
+    <ion-item>
+      <ion-input label="Password" type="password" placeholder="Enter text" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button id="open-toast">Login</ion-button>
+<ion-toast trigger="open-toast" message="Username is {{username}} Password is {{password}}" [duration]="3000" icon="globe"></ion-toast>
 </ion-content>
