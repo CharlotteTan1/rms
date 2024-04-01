@@ -20,6 +20,6 @@
       <ion-input label="Password" type="password" placeholder="Enter text" [(ngModel)]="password"></ion-input>
     </ion-item>
     <br>
-    <ion-button id="open-toast">Login</ion-button>
+    <ion-button (click)="login()" *ngIf="!loader" id="open-toast">Login</ion-button>
 <ion-toast trigger="open-toast" message="Username is {{username}} Password is {{password}}" [duration]="3000" icon="globe"></ion-toast>
 </ion-content>

@@ -10,10 +10,12 @@ import { LoginPage } from './pages/login/login.page';
 import { RegistrationPage } from './pages/registration/registration.page';
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [AppComponent, LoginPage, RegistrationPage],
-  imports: [FormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [FormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy } , HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
