@@ -1,48 +1,51 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
+
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Registration</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content [fullscreen]="true">
   <br>
-  <ion-item>
-    <ion-input label="First Name" labelPlacement="floating" placeholder="Enter text" [(ngModel)]="firstName"></ion-input>
-  </ion-item>
-    <br>
-    <ion-item>
-      <ion-input label="Middle Name" labelPlacement="floating" placeholder="Enter text" [(ngModel)]="middleName"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-input label="Last Name" labelPlacement="floating" placeholder="Enter text" [(ngModel)]="lastName"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-input label="Telephone input" labelPlacement="floating" type="tel" placeholder="888-888-8888" [(ngModel)]="contactNumber"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-input label="Email" labelPlacement="floating" placeholder="email@domain.com" [(ngModel)]="emailAddress"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-input label="Username" labelPlacement="floating" placeholder="Enter text" [(ngModel)]="username"></ion-input>
-    </ion-item>
-      <br>
-    <ion-item>
-      <ion-input label="Password" labelPlacement="floating" type="password" placeholder="Enter text" [(ngModel)]="password"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-input label="Comfirm password" labelPlacement="floating" type="password" placeholder="Enter text" [(ngModel)]="confirmPassword"></ion-input>
-    </ion-item>
-    <ion-button id="open-lol">Login</ion-button>
-  <ion-toast trigger="open-lol" message="First name: {{firstName}} \n Middle name: {{middleName}} Last name: {{lastName}} Contact Number: {{contactNumber}} Email Address: {{emailAddress}} Password: {{password}} Comfirm Password: {{confirmPassword}}" [duration]="3000" icon="globe"></ion-toast>
+<div class="input-container">
+  <ion-input label="First Name" [(ngModel)]="firstname" label-placements="floating" fill="outline" placeholder="Enter Text"></ion-input>
+</div>
+  <br>
 
-</ion-content>
+<div class="input-container">
+  <ion-input label="Middle Name" [(ngModel)]="middlename" label-placements="floating" fill="outline" placeholder="Enter Text"></ion-input>
+</div>
+  <br>
+
+<div class="input-container">  
+  <ion-input label="Last Name" [(ngModel)]="lastname" label-placements="floating" fill="outline" placeholder="Enter Text"></ion-input>
+</div> 
+  <br>
+
+<div class="input-container">    
+  <ion-input label="E-mail" [(ngModel)]="email" label-placements="floating" fill="outline" placeholder="Enter Text"></ion-input>
+</div>   
+  <br>
+
+<div class="input-container">  
+  <ion-input label="Username" [(ngModel)]="username" label-placements="floating" fill="outline" placeholder="Enter Text"></ion-input>
+</div>   
+  <br>
+
+<div class="input-container"> 
+  <ion-input label="Password" [(ngModel)]="password" label-placements="floating" fill="outline" placeholder="Enter Text"></ion-input>
+</div>   
+  <br>
+
+<div class="input-container">   
+  <ion-input label="Confirm Password" [(ngModel)]="confirmpassword" label-placements="floating" fill="outline" placeholder="Enter Text"></ion-input>
+</div>  
+  <br>
+  
+  <div class = "button-container" style = "text-align: center;">
+    <ion-button (click) = "registration()" id = "open-toast">Register</ion-button>
+  </div>
+  </ion-content>

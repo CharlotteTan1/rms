@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -9,7 +12,11 @@ export class LoginPage implements OnInit {
   username = ""
   password = ""
   loader:boolean = false;
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient, public _router: Router) {
+    
+   }
+
   login(){
   this.loader = true
     this.http.get<any>(`https://webtechnologies.site/714/Abella/api/login.php?username=`+this.username+`&password=`+this.password)
@@ -19,7 +26,7 @@ export class LoginPage implements OnInit {
           if(data.message=="no record")
             alert(data.message)
           else{
-            alert(data.message)
+            this._router.navigate(['home'])
           }
         });;
   }
